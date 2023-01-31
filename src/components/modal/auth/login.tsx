@@ -82,6 +82,7 @@ const Login = () => {
           fontSize="9pt"
           color="blue.500"
           cursor="pointer"
+          fontWeight={700}
           onClick={() => {
             setAuthModalState({ open: true, view: "resetPassword" });
           }}
