@@ -18,13 +18,20 @@ import {
 import React from "react";
 import { auth } from "@/src/firebase/clientApp";
 import { signOut, User } from "firebase/auth";
-import { useSetRecoilState } from "recoil";
+import { useResetRecoilState, useSetRecoilState } from "recoil";
 import { authModalState } from "@/src/atoms/authModalAtom";
+import { communityState } from "@/src/atoms/communitiesAtom";
 type UserMenuProps = {
   user?: User | null;
 };
 const UserMenu = ({ user }: UserMenuProps) => {
   const setModalState = useSetRecoilState(authModalState);
+  const resetCommunityState = useResetRecoilState(communityState);
+  const logout = async () => {
+    await signOut(auth);
+    resetCommunityState();
+  };
+
   return (
     <Menu>
       <MenuButton
@@ -84,7 +91,7 @@ const UserMenu = ({ user }: UserMenuProps) => {
               fontSize={"10pt"}
               fontWeight={700}
               _hover={{ bg: "blue.500", color: "white" }}
-              onClick={() => signOut(auth)}
+              onClick={logout}
             >
               <Flex align={"center"}>
                 <Icon as={MdOutlineLogin} fontSize={20} mr={2} />
