@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { auth, firestore } from "@/src/firebase/clientApp";
 import { User } from "firebase/auth";
-import { setDoc, collection, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 const OAuthButtons = () => {
   const [signInWithGoogle, userCred, loading, userError] =
     useSignInWithGoogle(auth);
