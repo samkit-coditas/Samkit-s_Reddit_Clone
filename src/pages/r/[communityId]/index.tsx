@@ -37,7 +37,7 @@ const CommunityPage: React.FC<communityPageProps> = ({ communityId }) => {
   const setCommunityStateValue = useSetRecoilState(communityState);
   useEffect(() => {
     getCommunityData();
-  }, []);
+  }, [communityId]);
 
   useEffect(() => {
     if (communityData) {
