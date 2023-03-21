@@ -96,7 +96,6 @@ const Comments: React.FC<commentsProps> = ({
     setCreateLoading(false);
   };
 
-  // const onDeleteComment = useCallback(
   const onDeleteComment = async (comment: Comment) => {
     setDeleteLoading(comment.id as string);
     try {
@@ -126,8 +125,6 @@ const Comments: React.FC<commentsProps> = ({
     }
     setDeleteLoading("");
   };
-  //   [setComments, setPostState]
-  // );
 
   const getPostComments = async () => {
     try {

@@ -153,7 +153,3 @@ const NewPostForm: React.FC<newPostFormProps> = ({ user }) => {
   );
 };
 export default NewPostForm;
-// textInputs={textInputs}
-// onChange={onTextChange}
-// handleCreatePost={handleCreatePost}
-// loading={loading}

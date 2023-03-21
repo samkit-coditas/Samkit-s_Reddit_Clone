@@ -44,10 +44,6 @@ const CommentInput: React.FC<CommentInputProps> = ({
             }}
           />
           <Flex
-            // position="absolute"
-            // left="1px"
-            // right={0.1}
-            // bottom="1px"
             justify="flex-end"
             bg="gray.100"
             p="6px 8px"
